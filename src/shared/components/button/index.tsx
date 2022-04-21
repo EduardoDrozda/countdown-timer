@@ -6,9 +6,9 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   color: "primary" | "secondary";
 }
 
-export function Button({ label, color, ...rest }: Props) {
+export function Button({ label, color, id, ...rest }: Props) {
   return (
-    <Container color={color} {...rest}>
+    <Container id={id} data-testid={id} color={color} {...rest}>
       {label}
     </Container>
   );

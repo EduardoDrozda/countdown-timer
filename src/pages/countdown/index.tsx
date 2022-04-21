@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Button } from "../../shared/components";
 import { useCountdown } from "../../shared/contexts";
 import {
@@ -14,6 +14,8 @@ import {
 
 import { useNavigate } from "react-router-dom";
 
+import music from "../../assets/mp3/TheFinalCountdown.mp3";
+
 let timeInterval: NodeJS.Timer;
 
 export default function Countdown() {
@@ -22,8 +24,10 @@ export default function Countdown() {
 
   const [day, setDay] = useState(0);
   const [hour, setHour] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
+  const [minute, setMinute] = useState(0);
+  const [second, setSecond] = useState(0);
+
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   const buildTimer = useCallback(() => {
     const countdown = new Date(countdownDate).getTime();
@@ -40,10 +44,17 @@ export default function Countdown() {
       const minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
+      const itsFinalCountdown =
+        days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0;
+
+      if (itsFinalCountdown) {
+        audioRef.current?.play();
+      }
+
       setDay(days);
       setHour(hours);
-      setMinutes(minutes);
-      setSeconds(seconds);
+      setMinute(minutes);
+      setSecond(seconds);
     }, 1000);
   }, [countdownDate]);
 
@@ -66,6 +77,9 @@ export default function Countdown() {
 
   return (
     <Container>
+      <audio ref={audioRef}>
+        <source type="audio/mp3" src={music} />
+      </audio>
       <Header>
         <HeaderTitle>Contador</HeaderTitle>
         <ButtonWrapper>
@@ -92,12 +106,12 @@ export default function Countdown() {
           </TimeWrapper>
 
           <TimeWrapper>
-            <span>{minutes}</span>
+            <span>{minute}</span>
             <span>Minutos</span>
           </TimeWrapper>
 
           <TimeWrapper>
-            <span>{seconds}</span>
+            <span>{second}</span>
             <span>Segundos</span>
           </TimeWrapper>
         </CountdownWrapper>

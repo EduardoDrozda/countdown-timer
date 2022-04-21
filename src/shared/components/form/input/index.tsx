@@ -10,7 +10,13 @@ export const Input = forwardRef<HTMLInputElement, Props>(
     return (
       <Container>
         {label && <FormLabel htmlFor={id}>{label}</FormLabel>}
-        <FormInput id={id} {...rest} ref={ref} name="dateValue" type="date" />
+        <FormInput
+          id={id}
+          ref={ref}
+          name="dateValue"
+          data-testid={id}
+          {...rest}
+        />
       </Container>
     );
   }

@@ -12,6 +12,11 @@ export const Header = styled.header`
   align-items: center;
 
   padding: 2rem;
+
+  ${({ theme }) =>
+    theme.medias.md({
+      flexDirection: "column",
+    })}
 `;
 
 export const HeaderTitle = styled.span`
@@ -19,6 +24,12 @@ export const HeaderTitle = styled.span`
   font-weight: bold;
 
   font-size: 3rem;
+
+  ${({ theme }) =>
+    theme.medias.md({
+      fontSize: "2rem",
+      marginBottom: "1rem",
+    })}
 `;
 
 export const ButtonWrapper = styled.div`
@@ -37,6 +48,11 @@ export const MissingTitle = styled.span`
 
   font-size: 5rem;
   font-weight: 500;
+
+  ${({ theme }) =>
+    theme.medias.md({
+      fontSize: "3rem",
+    })}
 `;
 
 export const CountdownWrapper = styled.div`
@@ -45,6 +61,11 @@ export const CountdownWrapper = styled.div`
   align-items: center;
 
   margin-top: 2rem;
+
+  ${({ theme }) =>
+    theme.medias.md({
+      flexDirection: "column",
+    })}
 `;
 
 export const TimeWrapper = styled.div`
@@ -56,11 +77,21 @@ export const TimeWrapper = styled.div`
   span:first-child {
     color: ${({ theme }) => theme.colors.text};
     font-size: 8rem;
+
+    ${({ theme }) =>
+      theme.medias.md({
+        fontSize: "5rem",
+      })}
   }
 
   span:last-child {
     color: ${({ theme }) => theme.colors.green};
     font-size: 2rem;
     text-align: center;
+
+    ${({ theme }) =>
+    theme.medias.md({
+      marginBottom: '1rem'
+    })}
   }
 `;

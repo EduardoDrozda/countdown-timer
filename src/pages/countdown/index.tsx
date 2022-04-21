@@ -14,6 +14,8 @@ import {
 
 import { useNavigate } from "react-router-dom";
 
+let timeInterval: NodeJS.Timer;
+
 export default function Countdown() {
   const { countdownDate } = useCountdown();
   const navigate = useNavigate();
@@ -26,7 +28,7 @@ export default function Countdown() {
   const buildTimer = useCallback(() => {
     const countdown = new Date(countdownDate).getTime();
 
-    setInterval(() => {
+    timeInterval = setInterval(() => {
       const now = new Date().getTime();
       const timeleft = countdown - now;
 
@@ -56,6 +58,10 @@ export default function Countdown() {
     }
 
     buildTimer();
+
+    return () => {
+      clearInterval(timeInterval);
+    };
   }, [returnToHome, countdownDate, buildTimer]);
 
   return (

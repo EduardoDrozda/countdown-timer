@@ -157,3 +157,5 @@ Open the browser and access http://localhost:3000
 ![](screenshots/2-Mobile.png)
 
 ![](screenshots/3-Mobile.png)
+
+Design created by [Lorenalgm](https://github.com/Lorenalgm/contador) for Dev challenge

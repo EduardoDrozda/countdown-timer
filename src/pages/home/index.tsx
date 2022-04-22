@@ -38,6 +38,7 @@ export default function Home() {
         <Input
           label="Informe uma data"
           placeholder="DD/MM/AAAA"
+          type="date"
           autoFocus
           value={countdownDate}
           onChange={(e) => handleCountdownDate(e.target.value)}

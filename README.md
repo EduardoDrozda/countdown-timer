@@ -1,46 +1,159 @@
-# Getting Started with Create React App
+# Countdown Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I created this app to increase my skills with React and its entire ecosystem. The application has the task of calculate left days from a date inserted by the user.
 
-## Available Scripts
+So when de countdown become 0 the music <strong>"It's final countdown</strong>" begin to play.
 
-In the project directory, you can run:
+If you want to see the application already running in production click on the link [aqui](https://countdown-timer-nine-gilt.vercel.app/)
 
-### `npm start`
+# Table of contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [Countdown Application](#countdown-application)
+- [Table of contents](#table-of-contents)
+- [Development language](#development-language)
+- [Architecture Folder](#architecture-folder)
+- [Dependencies](#dependencies)
+- [Development dependencies](#development-dependencies)
+- [Getting Started](#getting-started)
+- [Features i done](#features-i-done)
+- [Next features](#next-features)
+- [Desktop](#desktop)
+- [Mobile](#mobile)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Development language
 
-### `npm test`
+The project was developed using the ReactJS library with Typescript.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Architecture Folder
 
-### `npm run build`
+Below is a drawing of how the structure was developed.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+Countdown
+├── public/
+│   ├── index.html
+│   ├── favico.ico
+│   ├── manifest.json
+│   ├── robots.txt
+├── screenshots/
+├── src/
+│   ├── assets/
+│   │   └── mp3/
+│   ├── global/
+│   │   └── styles/
+│   │       ├── index.ts
+│   │       ├── styles.d.ts
+│   │       ├── theme.ts
+│   ├── pages/
+│   │   └── countdown/
+│   │       ├── index.tsx
+│   │       ├── styles.ts
+│   │   └── home/
+│   │       ├── index.tsx
+│   │       ├── styles.ts
+│   ├── routes/
+│   │   ├── index.ts
+│   ├── shared/
+│   │   └── components/
+│   │       └── button/
+│   │           ├── index.tsx
+│   │           ├── styles.ts
+│   │       └── form/
+│   │           └── input/
+│   │               ├── index.tsx
+│   │               ├── input.test.tsx
+│   │               ├── styles.ts
+│   │            ├── index.ts
+│   │       └── context/
+│   │           └── countdownProvider/
+│   │               ├── index.tsx
+│   │               ├── countdownProvider.test.tsx
+│   │               ├── styles.ts
+│   │            ├── index.ts
+│   │       └── declarations/
+│   │           ├── audio.d.ts
+│   │       └── utils/
+│   │           └── tests/
+│   │               ├── mocktheme.tsx
+│   ├── App.test.tsx
+│   ├── App.tsx
+│   ├── index.tsx
+│   ├── react-app-env.d.ts
+│   ├── setupTests.ts
+├── .editorconfig
+├── package.json
+├── README.md
+├── tsconfig.json
+├── yarn.lock
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Dependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [React](https://pt-br.reactjs.org/docs/create-a-new-react-app.html)
+- [Styled Components](https://github.com/styled-components/styled-components)
+- [Typescript](https://www.typescriptlang.org/)
+- [Yarn](https://yarnpkg.com/)
 
-### `npm run eject`
+# Development dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [React Test Renderer](https://pt-br.reactjs.org/docs/test-renderer.html)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+After cloning the project, run the command, at the root of the project.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+with npm
 
-## Learn More
+```console
+  npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+with yarn
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```console
+  yarn install
+```
+
+After all dependencias has been installed, run the command
+
+with npm
+
+```console
+  npm run start
+```
+
+with yarn
+
+```console
+  yarn start
+```
+
+Open the browser and access http://localhost:3000
+
+# Features i done
+
+- ✔️ Create Home Page.
+- ✔️ Create Countdown Page.
+- ✔️ Create Countdown Provider.
+- ✔️ Create Countdown Timer.
+
+# Next features
+
+- Finish Unit tests.
+- Github pipes.
+
+# Desktop
+
+![](screenshots/1-Desktop.png)
+
+![](screenshots/2-Desktop.png)
+
+![](screenshots/3-Desktop.png)
+
+# Mobile
+
+![](screenshots/1-Mobile.png)
+
+![](screenshots/2-Mobile.png)
+
+![](screenshots/3-Mobile.png)
